@@ -1,0 +1,1 @@
+export function useDebounceFun(fun:Function, timeOut:number):Function
