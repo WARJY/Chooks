@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/WARJY/Chooks/compare/v1.1.2...v1.1.4) (2020-06-08)
+
+
+### Bug Fixes
+
+* 修复dataValid规则；修复ts声明文件 ([63825ff](https://github.com/WARJY/Chooks/commit/63825ff454f06185aad5a4c04db4714c4ad862c4))
+
 ### [1.1.3](https://github.com/WARJY/Chooks/compare/v1.1.2...v1.1.3) (2020-06-08)
 
 
