@@ -1,10 +1,11 @@
 {
   "name": "chooks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "git cz",
+    "release": "standard-version"
   },
   "author": "gcc",
   "license": "ISC",
@@ -16,7 +17,8 @@
     "@commitlint/config-angular": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
     "cz-conventional-changelog": "3.2.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "standard-version": "^8.0.0"
   },
   "config": {
     "commitizen": {
