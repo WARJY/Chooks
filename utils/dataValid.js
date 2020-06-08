@@ -30,7 +30,7 @@ const dataValid = function (target, rule) {
 	if (!target || !rule) return console.error("目标对象或规则缺失")
 
 	//判断key长度
-	let keys_target = Object.keys(target).concat(Object.getOwnPropertySymbols(target))
+	let keys_target = Object.keys(target)
 	let keys_rule = Object.keys(rule)
 	if (keys_target.length !== keys_rule.length) return console.error("规则与目标对象长度不匹配")
 
