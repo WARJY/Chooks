@@ -1,6 +1,6 @@
 {
   "name": "chooks",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,6 @@
     "release": "standard-version"
   },
   "author": "gcc",
-  "license": "ISC",
   "dependencies": {
     "@vue/composition-api": "^0.5.0"
   },
@@ -29,5 +28,19 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WARJY/Chooks.git"
+  },
+  "keywords": [
+    "chooks",
+    "vue",
+    "@vue/composition-api"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WARJY/Chooks/issues"
+  },
+  "homepage": "https://github.com/WARJY/Chooks"
 }
