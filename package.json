@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "commit": "git cz",
+    "commit": "git add . && git cz",
     "release": "standard-version"
   },
   "author": "gcc",

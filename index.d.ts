@@ -1,7 +1,17 @@
-/// <reference path="./type/debounceFun.d.ts" />
-/// <reference path="./type/form.d.ts" />
-/// <reference path="./type/pagination.d.ts" />
-/// <reference path="./type/router.d.ts" />
-/// <reference path="./type/select.d.ts" />
-/// <reference path="./type/store.d.ts" />
-/// <reference path="./type/table.d.ts" />
+import { useDebounceFun } from './hooks/debounceFun'
+import { useForm } from './hooks/form'
+import { usePagination } from './hooks/pagination'
+import { useRouter } from './hooks/router'
+import { useSelect } from './hooks/select'
+import { useStore } from './hooks/store'
+import { useTable } from './hooks/table'
+
+export {
+    useDebounceFun,
+    useForm,
+    usePagination,
+    useRouter,
+    useSelect,
+    useStore,
+    useTable,
+}
