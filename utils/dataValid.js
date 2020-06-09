@@ -5,8 +5,9 @@ import is from './is.js'
 const MAP = {
 	"empty": function (field, val) {
 		let _tip = field + "不能为空"
+		if (val === undefined) return _tip
+		if (val === "") return _tip
 		if (is(val) === String) val = val.replace(/\s+/g, "")
-		if (!val) return _tip
 		if (is(val) === NaN) return _tip
 		if (is(val) === Array && val.length === 0) return _tip
 		if (is(val) === Object && Object.keys(val).length === 0) return _tip

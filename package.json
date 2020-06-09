@@ -5,19 +5,26 @@
   "main": "index.js",
   "scripts": {
     "commit": "git add . && git cz",
-    "release": "standard-version"
+    "release": "standard-version && git push --follow-tags origin master && npm publish"
   },
   "author": "gcc",
   "dependencies": {
     "@vue/composition-api": "^0.5.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "babel-jest": "^26.0.1",
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
-    "standard-version": "^8.0.0"
+    "jest": "^26.0.1",
+    "regenerator-runtime": "^0.13.5",
+    "standard-version": "^8.0.0",
+    "vue": "^2.6.11"
   },
   "config": {
     "commitizen": {
