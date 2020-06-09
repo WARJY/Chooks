@@ -13,16 +13,14 @@ export function useForm(useFormOptions) {
 
     //设置值
     const set = function (data) {
-        Object.keys(useFormOptions.fields).forEach(field => {
+        Object.keys(data).forEach(field => {
             useFormOptions.fields[field].value = data[field]
         })
     }
 
     //重置
     const reset = function () {
-        Object.keys(useFormOptions.fields).forEach(field => {
-            useFormOptions.fields[field].value = defaultState[field]
-        })
+        set(defaultState)
         if (useFormOptions.autoReset) commit()
     }
 
@@ -40,24 +38,23 @@ export function useForm(useFormOptions) {
     //提交
     const commit = useFormOptions.commit ?
         function () {
-            let timer = setTimeout(() => {
-                let cb = useFormOptions.commit
-                clearTimeout(timer)
-                cb(valid(), state)
-            }, 0)
+            useFormOptions.commit(valid())
         } : function () { return valid() }
 
     //自动提交
     let commitList = []
     if (useFormOptions.autoCommit === true) commitList = Object.keys(useFormOptions.fields)
     if (is(useFormOptions.autoCommit) === Array) commitList = useFormOptions.autoCommit
+    if (commitList.length === 0) return
+    let flag = {}
+    commitList.forEach(field=>{
+        flag[field] = false
+    })
     commitList.forEach(prop => {
         watch(() => useFormOptions.fields[prop].value, function (val, old) {
+            if(flag[prop] === false) return flag[prop] = true
             if (val == old) return
-            let timer = setTimeout(() => {
-                clearTimeout(timer)
-                commit()
-            }, 0)
+            commit()
         })
     })
 
