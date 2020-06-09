@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.7](https://github.com/WARJY/Chooks/compare/v1.1.4...v1.1.7) (2020-06-09)
+
+
+### Bug Fixes
+
+* 修复dataValid判空逻辑；修复useForm valid取值问题；为debounceFun和form添加单元测试 ([26ca67d](https://github.com/WARJY/Chooks/commit/26ca67d8b995159f5f98a89eb42d2fc14bb51d42))
+* 修复useForm autoCommit初始化执行 ([10ef929](https://github.com/WARJY/Chooks/commit/10ef9296217f7ab17d46b60b406409a956d9527a))
+
 ### [1.1.6](https://github.com/WARJY/Chooks/compare/v1.1.5...v1.1.6) (2020-06-09)
 
 ### [1.1.5](https://github.com/WARJY/Chooks/compare/v1.1.2...v1.1.5) (2020-06-09)
