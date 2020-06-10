@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/WARJY/Chooks/compare/v1.1.8...v1.2.0) (2020-06-10)
+
+
+### Features
+
+* 为usePagination添加手动分页逻辑 ([8a2392c](https://github.com/WARJY/Chooks/commit/8a2392c322cb6f8ecfef781e0e3dd6c6177bc761))
+
 ### [1.1.8](https://github.com/WARJY/Chooks/compare/v1.1.7...v1.1.8) (2020-06-10)
 
 
