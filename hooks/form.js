@@ -45,18 +45,19 @@ export function useForm(useFormOptions) {
     let commitList = []
     if (useFormOptions.autoCommit === true) commitList = Object.keys(useFormOptions.fields)
     if (is(useFormOptions.autoCommit) === Array) commitList = useFormOptions.autoCommit
-    if (commitList.length === 0) return
-    let flag = {}
-    commitList.forEach(field=>{
-        flag[field] = false
-    })
-    commitList.forEach(prop => {
-        watch(() => useFormOptions.fields[prop].value, function (val, old) {
-            if(flag[prop] === false) return flag[prop] = true
-            if (val == old) return
-            commit()
+    if (commitList.length > 0){
+        let flag = {}
+        commitList.forEach(field=>{
+            flag[field] = false
         })
-    })
+        commitList.forEach(prop => {
+            watch(() => useFormOptions.fields[prop].value, function (val, old) {
+                if(flag[prop] === false) return flag[prop] = true
+                if (val == old) return
+                commit()
+            })
+        })
+    }
 
     return {
         set,

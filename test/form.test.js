@@ -133,8 +133,7 @@ describe('test useForm', () => {
                 r()
             }, 100)
         }).then(() => {
-            console.log(count)
-            expect(count).toBe(2)
+            expect(count).toBe(1)
         })
     })
 
