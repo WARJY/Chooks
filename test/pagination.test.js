@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import compositionAPI, { ref } from '@vue/composition-api'
-import { usePagination } from '../hooks/pagination'
+import { usePagination } from '../index'
 Vue.use(compositionAPI)
 
 describe("test usePagination", () => {

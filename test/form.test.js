@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import compositionAPI, { ref } from '@vue/composition-api'
-import { useForm } from '../hooks/form'
+import { useForm } from '../index'
 Vue.use(compositionAPI)
 
 describe('test useForm', () => {

@@ -1,4 +1,4 @@
-import { useDebounceFun } from '../hooks/debounceFun'
+import { useDebounceFun } from '../index'
 
 test("test useDebounceFun", async () => {
 
