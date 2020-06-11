@@ -1,10 +1,10 @@
-import { useDebounceFun } from './hooks/debounceFun'
-import { useForm } from './hooks/form'
-import { usePagination } from './hooks/pagination'
-import { useRouter } from './hooks/router'
-import { useSelect } from './hooks/select'
-import { useStore } from './hooks/store'
-import { useTable } from './hooks/table'
+import { useDebounceFun } from './type/debounceFun'
+import { useForm } from './type/form'
+import { usePagination } from './type/pagination'
+import { useRouter } from './type/router'
+import { useSelect } from './type/select'
+import { useStore } from './type/store'
+import { useTable } from './type/table'
 
 export {
     useDebounceFun,

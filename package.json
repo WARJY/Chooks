@@ -18,13 +18,16 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "@commitlint/config-conventional": "^8.3.4",
+    "@vue/test-utils": "^1.0.3",
     "babel-jest": "^26.0.1",
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "regenerator-runtime": "^0.13.5",
     "standard-version": "^8.0.0",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.2",
+    "vue-template-compiler": "^2.6.11"
   },
   "config": {
     "commitizen": {

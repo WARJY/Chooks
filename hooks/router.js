@@ -1,31 +1,35 @@
 export function useRouter(context){
 
-    const refresh = function(){
-        context.root.$router.go(0)
+    const router = context.root.$router
+    const route = context.root.$route
+
+    const go = function(index){
+        if(!index) return
+        router.go(index)
     }
 
-    const back = function(){
-        context.root.$router.go(-1)
-    }
-
-    const replace = function(replace){
-        context.root.$router.replace(replace)
+    const replace = function(path, query){
+        return router.replace({
+            path: path,
+            query: query
+        })
     }
 
     const push = function(path, query){
-        context.root.$router.push({
+        return router.push({
             path: path,
             query: query
         })
     }
 
     const getQuery = function(){
-        return context.root.$route.query
+        return route.query
     }
 
     return {
-        refresh,
-        back,
+        router,
+        route,
+        go,
         replace,
         push,
         getQuery
