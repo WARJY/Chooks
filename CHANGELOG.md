@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/WARJY/Chooks/compare/v1.1.6...v1.4.0) (2020-06-11)
+
+
+### Features
+
+* 为usePagination添加手动分页逻辑 ([8a2392c](https://github.com/WARJY/Chooks/commit/8a2392c322cb6f8ecfef781e0e3dd6c6177bc761))
+
+
+### Bug Fixes
+
+* 修复useForm ([4506572](https://github.com/WARJY/Chooks/commit/45065721c976a9712a72a292735d9da337ead943))
+* 修复useForm autoCommit初始化执行 ([10ef929](https://github.com/WARJY/Chooks/commit/10ef9296217f7ab17d46b60b406409a956d9527a))
+
 ## [1.3.0](https://github.com/WARJY/Chooks/compare/v1.1.8...v1.3.0) (2020-06-10)
 
 
