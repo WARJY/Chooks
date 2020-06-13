@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/WARJY/Chooks/compare/v1.4.2...v1.5.0) (2020-06-13)
+
+
+### Features
+
+* 使用纯函数思想重构useForm ([1cd8120](https://github.com/WARJY/Chooks/commit/1cd8120c139ecdaadf79c8cd3bf78fbef6fa44e4))
+
 ### [1.4.2](https://github.com/WARJY/Chooks/compare/v1.3.0...v1.4.2) (2020-06-11)
 
 ### [1.4.1](https://github.com/WARJY/Chooks/compare/v1.4.0...v1.4.1) (2020-06-11)
