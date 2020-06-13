@@ -29,14 +29,11 @@ const MAP = {
 const dataValid = function (target, rule) {
 	//判空
 	if (!target || !rule) return console.error("目标对象或规则缺失")
-
-	//判断key长度
-	let keys_target = Object.keys(target)
 	let keys_rule = Object.keys(rule)
-	if (keys_target.length !== keys_rule.length) return console.error("规则与目标对象长度不匹配")
 
 	//开始
-	let result = keys_target.map((key, i) => {
+	let result = true
+	keys_rule.forEach((key, i) => {
 		let currentField = keys_rule[i]
 		let currentValue = target[key]
 		let currentRule = rule[currentField]
@@ -44,26 +41,34 @@ const dataValid = function (target, rule) {
 		//格式化规则为数组
 		if (is(currentRule) === String) currentRule = [currentRule]
 		if (is(currentRule) === Function) currentRule = currentRule.call(this)
-		let currentRes = currentRule.map(r => {
-
+		
+		let currentRes = []
+		currentRule.forEach(r => {
+			let ruleResult;
 			//字符串规则
 			if (is(r) === String) {
 				//跳过不存在的规则
-				if (!MAP[r]) return true
-				return MAP[r](currentField, currentValue)
+				if (!MAP[r]) ruleResult = true
+				else ruleResult = MAP[r](currentField, currentValue)
 			}
 
 			//数组规则
 			if (is(r) === Array) {
 				let aFlag = r.some(rr => currentValue === rr)
-				if (aFlag === true) return true
-				return currentField + "不合法"
+				if (aFlag === true) ruleResult = true
+				else ruleResult = currentField + "不合法"
 			}
+			currentRes.push(ruleResult)
 		})
-		return getResult(currentRes)
+		let currentResult = getResult(currentRes)
+		if(currentResult === true) return
+		if(result === true) return result = {
+			[currentField]: currentResult
+		}
+		result[currentField] = currentResult
 	})
 
-	return getResult(result)
+	return result
 }
 
 //通过结果数组获取结果

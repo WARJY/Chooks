@@ -1,68 +1,74 @@
-import { watch } from "@vue/composition-api"
+import { watch, reactive, ref, watchEffect } from "@vue/composition-api"
 import dataValid from "../utils/dataValid"
 import is from "../utils/is"
 
-export function useForm(useFormOptions) {
+export function useForm() {
+    //表单字段
+    const fields = ref({})
 
-    //储存默认值
-    const state = {}
-    Object.keys(useFormOptions.fields).forEach(field => {
-        state[field] = useFormOptions.fields[field].value
+    //规则
+    const rules = ref({})
+
+    //存储默认值
+    let defaultState;
+    let flag = false
+    let stopDefault = watchEffect(()=>{
+        if(flag === true) stopDefault()
+        if(JSON.stringify(fields.value) !== '{}' && flag === false){
+            defaultState = {...fields.value}
+            flag = true
+        }
+    },{
+        flush: 'sync'
     })
-    const defaultState = { ...state }
-
-    //设置值
-    const set = function (data) {
-        Object.keys(data).forEach(field => {
-            useFormOptions.fields[field].value = data[field]
-        })
-    }
 
     //重置
-    const reset = function () {
-        set(defaultState)
-        if (useFormOptions.autoReset) commit()
+    const reset = function (flag) { 
+        fields.value = defaultState
+        if(flag === true) commit.value()
     }
 
     //验证
-    const valid = useFormOptions.valid ?
-        function () {
-            let state = {}
-            Object.keys(useFormOptions.fields).forEach(field => {
-                state[field] = useFormOptions.fields[field].value
-            })
-            return dataValid({ ...state }, useFormOptions.valid)
-        }
-        : function () { return true }
+    const valid = function () { return dataValid(fields.value, rules.value) }
 
     //提交
-    const commit = useFormOptions.commit ?
-        function () {
-            useFormOptions.commit(valid())
-        } : function () { return valid() }
+    const commit = ref(function(){})
 
     //自动提交
-    let commitList = []
-    if (useFormOptions.autoCommit === true) commitList = Object.keys(useFormOptions.fields)
-    if (is(useFormOptions.autoCommit) === Array) commitList = useFormOptions.autoCommit
-    if (commitList.length > 0){
-        let flag = {}
-        commitList.forEach(field=>{
-            flag[field] = false
-        })
-        commitList.forEach(prop => {
-            watch(() => useFormOptions.fields[prop].value, function (val, old) {
-                if(flag[prop] === false) return flag[prop] = true
-                if (val == old) return
-                commit()
+    let stopList = []
+    const setAutoCommit = function (commitOption) {
+        let commitList = []
+        if (commitOption === true) commitList = Object.keys(fields.value)
+        if (is(commitOption) === Array) commitList = commitOption
+        if (commitList.length > 0) {
+            let flag = {}
+            commitList.forEach(field => {
+                flag[field] = false
             })
-        })
+            commitList.forEach(prop => {
+                let stop = watch(() => fields.value[prop], function (val, old) {
+                    if (flag[prop] === false) return flag[prop] = true
+                    if (val == old) return
+                    commit.value()
+                })
+                stopList.push(stop)
+            })
+        }
+        return stop
+    }
+
+    //停止自动提交
+    const stop = function(){
+        if(stopList.length === 0) return
+        stopList.forEach(s=>s())
     }
 
     return {
-        set,
+        fields,
+        rules,
         reset,
         valid,
-        commit
+        commit,
+        setAutoCommit
     }
 }
