@@ -1,16 +1,10 @@
-export interface useFormOptions<State> {
-    valid?: {
-        [index:string]: [] | string[] | [][] | Function[],
-    },
-    commit(result: boolean | string[]):void,
-    autoCommit?: boolean | string[],
-    autoReset?: boolean,
-    fields: State
-}
+import { Ref } from '@vue/composition-api';
 
-export function useForm<State>(useFormOptions:useFormOptions<State>):{
-    set(data:State):void,
-    reset():void,
-    valid():void,
-    commit():void
+export function useForm<T>(): {
+    fields:Ref<T>
+    rules:Ref<{ [K in keyof T]:Array<string | Array<any>> }>
+    reset(autoCommit:boolean):void
+    valid():boolean|T
+    commit():Ref<Function>
+    setAutoCommit(commitList:boolean|string[]):Function
 }

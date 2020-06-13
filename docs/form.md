@@ -4,45 +4,31 @@
 
 #### Type
 ```ts
-interface useFormOptions<State> {
-    valid?: {
-        [index:string]: [] | string[] | [][] | Function[],
-    },
-    commit(result: boolean | string[]):void,
-    autoCommit?: Boolean | string[],
-    autoReset?: Boolean,
-    fields: State
-}
-
-function useForm<State>(useFormOptions:useFormOptions<State>):{
-    set(data:State):void,
-    reset():void,
-    valid():void,
-    commit():void
+function useForm<T>(): {
+    fields:Ref<T>
+    rules:Ref<{ [K in keyof T]:Array<string | Array<any>> }>
+    reset(autoCommit:boolean):void
+    valid():boolean|T
+    commit():Ref<Function>
+    setAutoCommit(commitList:boolean|string[]):Function
 }
 ```
 
-#### Params
-- useFormOptions
-  - fields &mdash; 表单字段
-  - valid &mdash; 表单验证规则：验证通过则返回true，否则返回失败原因tip的数组
+#### Return
+- fields &mdash; 表单字段
+- rules &mdash; 表单验证规则：验证通过则返回true，否则返回失败原因tip的数组
     - key：字符串
-    - key：通过字段定义的顺序与fields对应
+    - key：应与fields中的键相对应
     - key：tip中作为该字段的释义，如```{ "手机号码": ["empty"] }``` 则tip为"手机号码不能为空"
     - value：数组
     - value：```[]``` 不验证
     - value：```["empty"]``` 非空验证
     - value：```[[1,2]]``` 枚举验证，表示只能为1或2
     - value：```["email", "phone"]``` 内置规则，分别表示电子邮箱和+86手机号码
-  - commit &mdash; 提交函数的回调函数，valid结果会以参数的形式传入
-  - autoCommit &mdash; 是否自动commit，传入数组则只对数组中的字段自动commit
-  - autoReset &mdash; 重置时是否自动commit
-
-#### Return
-- set(state) &mdash; 设置表单值的函数，传入数据格式必须符合fields定义的格式
-- reset() &mdash; 将表单的值重置为传入时fields的值
+- reset(true) &mdash; 将表单的值重置为传入时fields的值，传入true则自动执行一次commit
 - valid() &mdash; 表单验证，验证通过则返回true，否则返回失败原因tip的数组
 - commit() &mdash; 表单提交函数
+- setAutoCommit(true) &mdash; 设置自动commit，传入数组则只对数组中的字段自动commit，返回一个函数，执行后取消监听
 
 #### Example
 ```js
@@ -50,45 +36,27 @@ import { ref, Ref, onMounted } from "@vue/composition-api";
 import { useForm } from 'chooks'
 export default {
     setup(){
-        //表单字段
-        const formField = {
-            phone: ref(""),
-            email: ref(""),
-            isMember: ref(false),
+        let { fields, rules, reset, valid, commit, setAutoCommit } = useForm()
+        fields.value = {
+            "用户名": ""
+        }
+        rules.value = {
+            "用户名": ["empty"]
         }
 
-        //提交函数
-        const searchUser = function(result){
-            if(result === true) store.dispatch("searchUser",{
-                userName: formField.userName.value
-            }).then(data=>{})
+        commit.value = function () {
+            console.log("commit")
         }
 
-        const { set, reset, valid, commit } = useForm({
-            fields: formField,
-            valid: {
-                "手机号码": ["phone"],
-                "邮箱": ["email"],
-                "是否会员": ["empty", [true, false]]
-            },
-            commit: searchUser,
-            autoCommit: ["phone"]
-            autoReset: true,
-        })
+        reset()
 
-        onMounted(()=>{
-            set({
-                phone: "11",
-                email: "22",
-                isMember: true,
-            })
-            console.log(valid())
-            commit()
-            reset()
-        })
+        valid()
+
+        let stop = setAutoCommit(["用户名"])
+        stop()
 
         return { 
-            set, reset, valid, commit
+            set, reset, commit
         }
     }
 }
