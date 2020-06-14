@@ -7,37 +7,32 @@ describe("test usePagination", () => {
 
     //远程分页
     test("test remote pagination", () => {
-        const { page, pageSize, pageCount, pageChange, pageSizeChange } = usePagination(paginationCB, 10)
+        let { page, pageSize, pageCount, pageChange, pageSizeChange, callback } = usePagination()
 
-        const paginationCB = function(pg, pgSize){
-            expect(pg).toBe(page.value)
-            expect(pgSize).toBe(pageSize.value)
+        callback.value = function(){
             pageCount.value = 10
-            expect(pageCount.value).toBe(10)
         }
 
         pageChange(2)
+        expect(page.value).toBe(2)
+
         pageSizeChange(8)
+        expect(pageSize.value).toBe(8)
     })
 
     //手动分页
-    test("test manual pagination", () => {
+    test("test manual pagination", async () => {
 
-        const data = ref([])
-        const { page, pageSize, pageCount, pageChange, pageSizeChange, calcPage, paginationData } = usePagination(paginationCB, 10, data)
-
-        const paginationCB = function(pg, pgSize){
-            expect(pg).toBe(page.value)
-            expect(pgSize).toBe(pageSize.value)
-        }
+        const { page, pageSize, pageCount, pageChange, pageSizeChange, data, paginationData } = usePagination()
 
         //填充手动分页数据
-        for(let i=0;i<100;i++){
-            data.value.push(i)
+        let dataAll = []
+        for(let i=0;i<99;i++){
+            dataAll.push(i)
         }
+        data.value = dataAll
 
         //计算分页
-        calcPage()
         expect(pageCount.value).toBe(10)
         expect(paginationData.value.length).toBe(10)
         expect(paginationData.value[0]).toBe(0)
