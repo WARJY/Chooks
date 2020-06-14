@@ -4,36 +4,52 @@
 
 #### Type
 ```ts
-function useSelect(muti: boolean, callback: Function): {
-    select: Ref<any>,
-    selectArr: Ref<any[]>,
-    loading: Ref<boolean>,
-    selectFun(val: any): void
+function useSelect(uniqueId?:any): {
+    muti: Ref<boolean>
+    select: Ref<any>
+    options: Ref<Array<any>>
+    select(item: any, filter?: boolean): void
+    remove(item: any, removeAll?: boolean): void
 }
 ```
 #### Params
-- muti &mdash; 是否多选
-- callback &mdash; 选择的回调函数，已选项通过参数传入
+- uniqueId &mdash; 选择项的唯一id，不传则通过序列化比较
 
 #### Return
+- muti &mdash; 是否多选
 - select &mdash; 当前选择的选项
-- selectArr &mdash; 当前选择的选项（多选）
-- loading &mdash; 是否loading（异步选择）
-- selectFun &mdash; 选择处理函数，已选项通过参数传入
+- options &mdash; 可选项数组
+- select(item, filter) &mdash; 选择函数，传入filter=true则不能重复添加
+- remove(item, removeAll) &mdash; 移除选项函数，传入removeAll=true则移除全部符合条件的item
 
 #### Example
 ```js
 import { useSelect } from 'chooks'
 export default {
     setup(){
-        const remoteSearch = async function(val:any){
-            await store.dispatch("remoteSearch").then(data=>{})
-        }
+        //单选
+        const { options, selected, select } = useSelect("id")
+        options.value = [
+            { id: 1 },
+            { id: 2 },
+            { id: 3 },
+        ]
+        select({id: 1})
 
-        const { select, selectArr, loading, selectFun } = useSelect(true, remoteSearch)
+        //多选
+        const { muti, options, selected, select, remove } = useSelect("id")
+        muti.value = true
+        options.value = [
+            { id: 1 },
+            { id: 2 },
+            { id: 3 },
+        ]
+        select({id: 1})
+        select({id: 1}, true)
+        remove({id:1})
 
         return {
-            select, selectArr, loading, selectFun
+            options, selected, select, remove
         }
     }
 }

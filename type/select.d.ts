@@ -1,8 +1,9 @@
 import { Ref } from '@vue/composition-api';
 
-export function useSelect(muti: boolean, callback: Function): {
-    select: Ref<any>,
-    selectArr: Ref<any[]>,
-    loading: Ref<boolean>,
-    selectFun(val: any): void
+export function useSelect(uniqueId?:any): {
+    muti: Ref<boolean>
+    select: Ref<any>
+    options: Ref<Array<any>>
+    select(item: any, filter?: boolean): void
+    remove(item: any, removeAll?: boolean): void
 }
