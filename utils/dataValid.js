@@ -13,6 +13,11 @@ const MAP = {
 		if (is(val) === Object && Object.keys(val).length === 0) return _tip
 		return true
 	},
+	"tel": function (field, val) {
+		let _tip = "请输入正确的座机号"
+		if (!/^(0\d{2,3}-\d{7,8})(-\d{1,4})?$/.test(val)) return _tip
+		return true
+	},
 	"phone": function (field, val) {
 		let _tip = "请输入正确的手机号"
 		if (!/^1\d{10}$/.test(val)) return _tip
@@ -22,7 +27,17 @@ const MAP = {
 		let _tip = "请输入正确的邮箱地址"
 		if (!/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(val)) return _tip
 		return true
-	}
+	},
+	"url": function (field, val) {
+		let _tip = "请输入正确的url地址"
+		if (!/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(val)) return _tip
+		return true
+	},
+	"card": function (field, val) {
+		let _tip = "请输入正确的身份证号码"
+		if (!/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(val)) return _tip
+		return true
+	},
 }
 
 //数据验证
