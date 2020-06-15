@@ -3,7 +3,7 @@ import { ref } from '@vue/composition-api';
 export function useStore(context, module){
     let store = context.root.$store
 
-    let state = ref(store.state)
+    let state = store.state
     let commit = store.commit
     let dispatch = store.dispatch
 
