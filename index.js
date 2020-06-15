@@ -5,9 +5,11 @@ import { useRouter } from './hooks/router.js'
 import { useSelect } from './hooks/select.js'
 import { useStore } from './hooks/store.js'
 import { useTable } from './hooks/table.js'
+import { useLoadingFun } from './hooks/loadingFun.js'
 
 export {
     useDebounceFun,
+    useLoadingFun,
     useForm,
     usePagination,
     useRouter,
