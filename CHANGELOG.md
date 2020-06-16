@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/WARJY/Chooks/compare/v1.6.0...v1.7.0) (2020-06-16)
+
+
+### Features
+
+* 新增useStatic静态hook ([cf7125b](https://github.com/WARJY/Chooks/commit/cf7125b58aa047f3796db568675214171be07381))
+
 ## [1.6.0](https://github.com/WARJY/Chooks/compare/v1.5.5...v1.6.0) (2020-06-15)
 
 
