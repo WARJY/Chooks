@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/WARJY/Chooks/compare/v1.7.0...v1.7.1) (2020-06-16)
+
+
+### Bug Fixes
+
+* 移除useTabel ([cd09bf5](https://github.com/WARJY/Chooks/commit/cd09bf544173d8a4d9157c5b7c0350bdfe184eba))
+
 ## [1.7.0](https://github.com/WARJY/Chooks/compare/v1.6.0...v1.7.0) (2020-06-16)
 
 
