@@ -6,6 +6,7 @@ import { useSelect } from './type/select'
 import { useStore } from './type/store'
 import { useTable } from './type/table'
 import { useLoadingFun } from './type/loadingFun'
+import { useStatic } from './type/static'
 
 export {
     useDebounceFun,
@@ -16,4 +17,5 @@ export {
     useSelect,
     useStore,
     useTable,
+    useStatic
 }

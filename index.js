@@ -6,6 +6,7 @@ import { useSelect } from './hooks/select.js'
 import { useStore } from './hooks/store.js'
 import { useTable } from './hooks/table.js'
 import { useLoadingFun } from './hooks/loadingFun.js'
+import { useStatic } from './hooks/static.js'
 
 export {
     useDebounceFun,
@@ -16,4 +17,5 @@ export {
     useSelect,
     useStore,
     useTable,
+    useStatic
 }
