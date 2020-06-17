@@ -20,7 +20,7 @@ describe("test useSelect", () => {
     })
 
     test("test single select", () => {
-        const { options, selected, select } = useSelect("id")
+        const { options, selected, select, isSelected } = useSelect("id")
         options.value = [
             { id: 1 },
             { id: 2 },
@@ -28,10 +28,12 @@ describe("test useSelect", () => {
         ]
         select({id: 1})
         expect(selected.value).toStrictEqual({id: 1})
+        expect(isSelected({id:1})).toBe(true)
+        expect(isSelected({id:2})).toBe(false)
     })
 
     test("test muti select", () => {
-        const { muti, options, selected, select, remove } = useSelect("id")
+        const { muti, options, selected, select, selectAll, remove, removeAll, isSelected } = useSelect("id")
         muti.value = true
         options.value = [
             { id: 1 },
@@ -40,6 +42,8 @@ describe("test useSelect", () => {
         ]
         select({id: 1})
         expect(selected.value).toStrictEqual([{id: 1}])
+        expect(isSelected({id:1})).toBe(true)
+        expect(isSelected({id:2})).toBe(false)
         select({id: 1}, true)
         select({id: 1}, true)
         select({id: 1}, true)
@@ -53,5 +57,13 @@ describe("test useSelect", () => {
         expect(selected.value).toStrictEqual([{id: 1},{id: 2}])
         remove({id:1}, true)
         expect(selected.value).toStrictEqual([{id: 2}])
+        selectAll()
+        expect(selected.value).toStrictEqual([
+            { id: 1 },
+            { id: 2 },
+            { id: 3 },
+        ])
+        removeAll()
+        expect(selected.value).toStrictEqual([])
     })
 })

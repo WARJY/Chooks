@@ -4,7 +4,6 @@ import { usePagination } from './hooks/pagination.js'
 import { useRouter } from './hooks/router.js'
 import { useSelect } from './hooks/select.js'
 import { useStore } from './hooks/store.js'
-import { useTable } from './hooks/table.js'
 import { useLoadingFun } from './hooks/loadingFun.js'
 import { useStatic } from './hooks/static.js'
 
@@ -16,6 +15,5 @@ export {
     useRouter,
     useSelect,
     useStore,
-    useTable,
     useStatic
 }

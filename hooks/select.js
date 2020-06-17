@@ -33,11 +33,37 @@ export function useSelect(uniqueId) {
         } catch (error) { }
     }
 
+    const selectAll = function () {
+        if (muti.value === false) return
+        selected.value = options.value
+    }
+
+    const removeAll = function () {
+        if (muti.value === false) return
+        selected.value = []
+    }
+
+    const isSelected = function (item) {
+        if(muti.value === false){
+            if(uniqueId) return selected.value[uniqueId] === item[uniqueId]
+            if(!uniqueId) return JSON.stringify(selected.value) === JSON.stringify(item)
+        }
+        if(muti.value === true){
+            return selected.value.some(i=>{
+                if(uniqueId) return i[uniqueId] === item[uniqueId]
+                if(!uniqueId) return JSON.stringify(i) === JSON.stringify(item)
+            })
+        }
+    }
+
     return {
         muti,
         options,
         selected,
         select,
-        remove
+        selectAll,
+        remove,
+        removeAll,
+        isSelected
     }
 }
