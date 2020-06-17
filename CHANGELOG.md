@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/WARJY/Chooks/compare/v1.8.0...v1.8.1) (2020-06-17)
+
+
+### Bug Fixes
+
+* 修复useSelect变量名重复bug ([644d6a8](https://github.com/WARJY/Chooks/commit/644d6a847a8a6f17c6bc27a3cff05ba2b4d2ba22))
+
 ## [1.8.0](https://github.com/WARJY/Chooks/compare/v1.7.2...v1.8.0) (2020-06-17)
 
 
