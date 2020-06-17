@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/WARJY/Chooks/compare/v1.7.2...v1.8.0) (2020-06-17)
+
+
+### Features
+
+* 新增useThrottleFun ([1746a91](https://github.com/WARJY/Chooks/commit/1746a9106a4745c290fb977c223b0111a5d75dc3))
+
 ### [1.7.2](https://github.com/WARJY/Chooks/compare/v1.7.1...v1.7.2) (2020-06-17)
 
 ### [1.7.1](https://github.com/WARJY/Chooks/compare/v1.7.0...v1.7.1) (2020-06-16)
