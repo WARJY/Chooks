@@ -84,12 +84,14 @@ export default {
 ## Hooks
 
 - [`useDebounceFun`](https://github.com/WARJY/Chooks/blob/master/docs/debounceFun.md) &mdash; 为【函数】添加防抖功能的装饰器函数
+- [`useThrottleFun`](https://github.com/WARJY/Chooks/blob/master/docs/throttleFun.md) &mdash; 为【函数】添加节流功能的装饰器函数
+- [`useLoadingFun`](https://github.com/WARJY/Chooks/blob/master/docs/loadingFun.md) &mdash; 为【函数】添加等待功能的装饰器函数
 - [`useSelect`](https://github.com/WARJY/Chooks/blob/master/docs/select.md) &mdash; 为【选项】提供单选，多选，选择变化等逻辑
 - [`useForm`](https://github.com/WARJY/Chooks/blob/master/docs/form.md) &mdash; 为【表单】提供初始化数据，重置，数据验证，提交，自动提交等逻辑
-- [`useTable`](https://github.com/WARJY/Chooks/blob/master/docs/table.md) &mdash; 为【表格】提供数据源，选择，过滤选择等逻辑
 - [`usePagination`](https://github.com/WARJY/Chooks/blob/master/docs/pagination.md) &mdash; 为【分页】提供页码，页数，每页大小，页码变化等逻辑
 - [`useRouter`](https://github.com/WARJY/Chooks/blob/master/docs/router.md) &mdash; 为【vue-router】提供刷新，后退，跳转，获取参数等逻辑
 - [`useStore`](https://github.com/WARJY/Chooks/blob/master/docs/store.md) &mdash; 为【vuex】提供state, commit, dispatch等逻辑
+- [`useStatic`](https://github.com/WARJY/Chooks/blob/master/docs/static.md) &mdash; 为应用提供一些全局静态hooks
 
 <!-- ## Contributing
 

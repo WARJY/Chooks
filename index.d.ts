@@ -1,4 +1,5 @@
 import { useDebounceFun } from './type/debounceFun'
+import { useThrottleFun } from './type/throttleFun'
 import { useForm } from './type/form'
 import { usePagination } from './type/pagination'
 import { useRouter } from './type/router'
@@ -9,6 +10,7 @@ import { useStatic } from './type/static'
 
 export {
     useDebounceFun,
+    useThrottleFun,
     useLoadingFun,
     useForm,
     usePagination,

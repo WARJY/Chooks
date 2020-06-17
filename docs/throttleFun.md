@@ -1,21 +1,21 @@
-### useDebounceFun
+### useThrottleFun
 
-> 为【函数】添加防抖功能的装饰器函数
+> 为【函数】添加节流功能的装饰器函数
 
 #### Type
 ```ts
-function useDebounceFun(fun:Function, timeOut:number):Function
+function useThrottleFun(fun:Function, timeOut:number):Function
 ```
 #### Params
 - fun &mdash; 需要被装饰的函数，可以为任何函数
-- timeOut &mdash; 防抖等待时间
+- timeOut &mdash; 节流等待时间
 
 #### Return
-- 防抖装饰后的函数
+- 节流装饰后的函数
 
 #### Example
 ```js
-import { useDebounceFun } from 'chooks'
+import { useThrottleFun } from 'chooks'
 export default {
     setup(){
         //any function
@@ -23,7 +23,7 @@ export default {
             await store.dispatch("getUserData").then(data=>{})
         }
         return { 
-            getUserData: useDebounceFun(getUserData, 1000)
+            getUserData: useThrottleFun(getUserData, 1000)
         }
     }
 }
