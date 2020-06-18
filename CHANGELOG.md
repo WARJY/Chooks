@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/WARJY/Chooks/compare/v1.8.1...v1.9.0) (2020-06-18)
+
+
+### Features
+
+* 新增useList ([d8777e9](https://github.com/WARJY/Chooks/commit/d8777e9e81fd435a6e6d1d60165987a78de2bed5))
+
 ### [1.8.1](https://github.com/WARJY/Chooks/compare/v1.8.0...v1.8.1) (2020-06-17)
 
 
