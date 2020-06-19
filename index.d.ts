@@ -1,6 +1,7 @@
 import { useDebounceFun } from './type/debounceFun'
 import { useThrottleFun } from './type/throttleFun'
 import { useForm } from './type/form'
+import { useList } from './type/list'
 import { usePagination } from './type/pagination'
 import { useRouter } from './type/router'
 import { useSelect } from './type/select'
@@ -13,6 +14,7 @@ export {
     useThrottleFun,
     useLoadingFun,
     useForm,
+    useList,
     usePagination,
     useRouter,
     useSelect,

@@ -5,7 +5,7 @@ export function useThrottleFun(fun, timeOut){
     let throttleFun = function(...rest){
         if(!timer){
             timer = setTimeout(function(){
-                fun(rest)
+                fun(...rest)
                 clearTimeout(timer)
                 timer = ""
             },timeOut)

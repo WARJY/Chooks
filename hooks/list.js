@@ -1,6 +1,6 @@
 import { ref, watch } from "@vue/composition-api"
 
-export function useList() {
+export function useList(padding=1) {
     let start = 0
 
     const data = ref([])
@@ -14,19 +14,21 @@ export function useList() {
         if(e.preventDefault) e.preventDefault()
         let scrollTop = e.target.scrollTop
         if (!scrollTop) return
-        start = (Math.floor(scrollTop / itemHeight.value) <= data.value.length - size.value) ? Math.floor(scrollTop / itemHeight.value) : data.value.length - size.value
-        top.value = start * itemHeight.value
-        renderData.value = data.value.slice(start, start + size.value)
+        start = (Math.floor(scrollTop / itemHeight.value) <= data.value.length - size.value - padding) ? Math.floor(scrollTop / itemHeight.value) : data.value.length - size.value - padding
+        top.value = (start - padding) * itemHeight.value
+        top.value = top.value>0?top.value:0
+        renderData.value = data.value.slice(start, start + size.value + padding*2)
     }
 
     watch([data, itemHeight, size], ([data, itemHeight, size]) => {
-        top.value = start * itemHeight
-        renderData.value = data.slice(start, start + size)
+        top.value = (start - padding) * itemHeight
+        top.value = top.value>0?top.value:0
+        renderData.value = data.slice(start, start + size + padding*2)
     })
 
     const toTop = function(){
         top.value = 0
-        renderData.value = data.value.slice(0, size.value)
+        renderData.value = data.value.slice(0, size.value + padding)
         el.value.scrollTo(0,0)
     }
 

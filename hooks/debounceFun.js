@@ -5,7 +5,7 @@ export function useDebounceFun(fun, timeOut){
     let debounceFun = function(...rest){
         if(timer) clearTimeout(timer)
         timer = setTimeout(()=>{
-           fun(rest)
+           fun(...rest)
         },
         timeOut)
     }

@@ -7,7 +7,7 @@ export function useLoadingFun(fun, timeOut=10000){
 
     const loadingFun = async function(...rest){
         loading.value = true
-        await fun(rest)
+        await fun(...rest)
         loading.value = false
     }
 
