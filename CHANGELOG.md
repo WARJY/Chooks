@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.2](https://github.com/WARJY/Chooks/compare/v1.10.1...v1.10.2) (2020-06-19)
+
+
+### Bug Fixes
+
+* 放弃watchEffect使用，转为watch ([7696b26](https://github.com/WARJY/Chooks/commit/7696b269e6d38840bd208fbcbe0686dfaefccaf3))
+
 ### [1.10.1](https://github.com/WARJY/Chooks/compare/v1.10.0...v1.10.1) (2020-06-19)
 
 ## [1.10.0](https://github.com/WARJY/Chooks/compare/v1.8.0...v1.10.0) (2020-06-19)
