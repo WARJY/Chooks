@@ -5,5 +5,5 @@ export function useCount(): {
     min: Ref<number>
     max: Ref<number>
     change(val: number): void
-    countDown(interval: number?, val: number?): Promise<true | Error>
+    countDown(interval?: number, val?: number): Promise<true | Error>
 }
