@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/WARJY/Chooks/compare/v1.10.2...v1.11.0) (2020-06-20)
+
+
+### Features
+
+* 新增useCount,useEmitter,useStorage ([c707170](https://github.com/WARJY/Chooks/commit/c707170ed4912ed739453aa3c9a697e84bc19515))
+
 ### [1.10.2](https://github.com/WARJY/Chooks/compare/v1.10.1...v1.10.2) (2020-06-19)
 
 
