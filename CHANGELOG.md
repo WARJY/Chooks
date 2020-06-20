@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/WARJY/Chooks/compare/v1.9.0...v1.12.0) (2020-06-20)
+
+
+### Features
+
+* 新增useCount,useEmitter,useStorage ([c707170](https://github.com/WARJY/Chooks/commit/c707170ed4912ed739453aa3c9a697e84bc19515))
+
+
+### Bug Fixes
+
+* 修复useList，useCount类型文件 ([15f5f33](https://github.com/WARJY/Chooks/commit/15f5f33b36a84b11bb0d6f886fc1078eeae73b41))
+* 放弃watchEffect使用，转为watch ([7696b26](https://github.com/WARJY/Chooks/commit/7696b269e6d38840bd208fbcbe0686dfaefccaf3))
+
 ## [1.11.0](https://github.com/WARJY/Chooks/compare/v1.10.2...v1.11.0) (2020-06-20)
 
 
