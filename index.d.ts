@@ -1,12 +1,15 @@
 import { useDebounceFun } from './type/debounceFun'
 import { useThrottleFun } from './type/throttleFun'
+import { useLoadingFun } from './type/loadingFun'
 import { useForm } from './type/form'
 import { useList } from './type/list'
-import { usePagination } from './type/pagination'
-import { useRouter } from './type/router'
+import { useCount } from './type/count'
 import { useSelect } from './type/select'
+import { usePagination } from './type/pagination'
+import { useStorage } from './type/storage'
+import { useEmitter } from './type/emitter'
+import { useRouter } from './type/router'
 import { useStore } from './type/store'
-import { useLoadingFun } from './type/loadingFun'
 import { useStatic } from './type/static'
 
 export {
@@ -15,9 +18,12 @@ export {
     useLoadingFun,
     useForm,
     useList,
-    usePagination,
-    useRouter,
+    useCount,
     useSelect,
+    usePagination,
+    useStorage,
+    useEmitter,
+    useRouter,
     useStore,
     useStatic
 }
