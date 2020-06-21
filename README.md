@@ -8,6 +8,32 @@ Vue 3.0还没有发布，但可以使用@vue/composition-api体验Vue 3.0的函�
 
 > chooks以纯函数方式调用，支持typescript类型检测，并且完全向下兼容Vue 2.0
 
+## Hooks
+
+### Function decorator
+
+- [`useDebounceFun`](https://github.com/WARJY/Chooks/blob/master/docs/debounceFun.md) &mdash; 为【函数】添加防抖功能的装饰器函数
+- [`useThrottleFun`](https://github.com/WARJY/Chooks/blob/master/docs/throttleFun.md) &mdash; 为【函数】添加节流功能的装饰器函数
+- [`useLoadingFun`](https://github.com/WARJY/Chooks/blob/master/docs/loadingFun.md) &mdash; 为【函数】添加等待功能的装饰器函数
+
+### UI & Interactive
+- [`useSelect`](https://github.com/WARJY/Chooks/blob/master/docs/select.md) &mdash; 为【选项】提供单选，多选，选择变化等逻辑
+- [`useForm`](https://github.com/WARJY/Chooks/blob/master/docs/form.md) &mdash; 为【表单】提供初始化数据，重置，数据验证，提交，自动提交等逻辑
+- [`useList`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【列表】添加滚动及虚拟列表功能
+- [`useCount`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【计数器】提供技术，倒计时等功能
+- [`usePagination`](https://github.com/WARJY/Chooks/blob/master/docs/count.md) &mdash; 为【分页】提供页码，页数，每页大小，页码变化等逻辑
+
+### Communication
+- [`useEmitter`](https://github.com/WARJY/Chooks/blob/master/docs/emitter.md) &mdash; 提供一个的订阅-发布模式机制
+
+### Storage
+- [`useStorage`](https://github.com/WARJY/Chooks/blob/master/docs/storage.md) &mdash; 为【storage】提供过期时间，get，set等函数
+
+### Plus
+- [`useRouter`](https://github.com/WARJY/Chooks/blob/master/docs/router.md) &mdash; 为【vue-router】提供刷新，后退，跳转，获取参数等逻辑
+- [`useStore`](https://github.com/WARJY/Chooks/blob/master/docs/store.md) &mdash; 为【vuex】提供state, commit, dispatch等逻辑
+- [`useStatic`](https://github.com/WARJY/Chooks/blob/master/docs/static.md) &mdash; 为应用提供一些全局静态hooks
+
 ## Install
 
 ```sh
@@ -80,22 +106,6 @@ export default {
 }
 <script>
 ```
-
-## Hooks
-
-- [`useDebounceFun`](https://github.com/WARJY/Chooks/blob/master/docs/debounceFun.md) &mdash; 为【函数】添加防抖功能的装饰器函数
-- [`useThrottleFun`](https://github.com/WARJY/Chooks/blob/master/docs/throttleFun.md) &mdash; 为【函数】添加节流功能的装饰器函数
-- [`useLoadingFun`](https://github.com/WARJY/Chooks/blob/master/docs/loadingFun.md) &mdash; 为【函数】添加等待功能的装饰器函数
-- [`useSelect`](https://github.com/WARJY/Chooks/blob/master/docs/select.md) &mdash; 为【选项】提供单选，多选，选择变化等逻辑
-- [`useForm`](https://github.com/WARJY/Chooks/blob/master/docs/form.md) &mdash; 为【表单】提供初始化数据，重置，数据验证，提交，自动提交等逻辑
-- [`useList`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【列表】添加滚动及虚拟列表功能
-- [`useCount`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【列表】添加滚动及虚拟列表功能
-- [`usePagination`](https://github.com/WARJY/Chooks/blob/master/docs/count.md) &mdash; 为【计数器】提供技术，倒计时等功能
-- [`useEmitter`](https://github.com/WARJY/Chooks/blob/master/docs/emitter.md) &mdash; 提供一个的订阅-发布模式机制
-- [`useStorage`](https://github.com/WARJY/Chooks/blob/master/docs/storage.md) &mdash; 为【storage】提供过期时间，get，set等函数
-- [`useRouter`](https://github.com/WARJY/Chooks/blob/master/docs/router.md) &mdash; 为【vue-router】提供刷新，后退，跳转，获取参数等逻辑
-- [`useStore`](https://github.com/WARJY/Chooks/blob/master/docs/store.md) &mdash; 为【vuex】提供state, commit, dispatch等逻辑
-- [`useStatic`](https://github.com/WARJY/Chooks/blob/master/docs/static.md) &mdash; 为应用提供一些全局静态hooks
 
 <!-- ## Contributing
 

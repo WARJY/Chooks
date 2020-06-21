@@ -1,4 +1,20 @@
+const storageAvailable = function(storage) {
+    try {
+        storage = window[type]
+        let x = '__storage_test__'
+        storage.setItem(x, x)
+        storage.removeItem(x)
+        return true
+    }
+    catch(e) {
+        console.error("当前环境不支持storage")
+        return false
+    }
+}
+
 export function useStorage(storage, option) {
+
+    if(storageAvailable(storage) !== true) return
 
     const keyBase = option.keyBase || ""
     const expires = option.expires || 0

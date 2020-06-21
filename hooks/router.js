@@ -3,6 +3,8 @@ export function useRouter(context){
     const router = context.root.$router
     const route = context.root.$route
 
+    if(!router || !route) return console.error("使用useRouter前请全局注入vue-router")
+
     const go = function(index){
         if(!index) return
         router.go(index)
