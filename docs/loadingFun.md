@@ -4,9 +4,9 @@
 
 #### Type
 ```ts
-function useLoadingFun(fun:Function, timeOut?:number):{
+function useLoadingFun<T extends Function>(fun:T, timeOut?:number):{
     loading: Ref<boolean>
-    fun: Function
+    fun: T
 }
 ```
 #### Params

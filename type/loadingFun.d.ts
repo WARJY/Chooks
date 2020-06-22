@@ -1,6 +1,6 @@
 import { Ref } from '@vue/composition-api';
 
-export function useLoadingFun(fun:Function, timeOut?:number):{
+export function useLoadingFun<T extends Function>(fun:T, timeOut?:number):{
     loading: Ref<boolean>
-    fun: Function
+    fun: T
 }

@@ -15,6 +15,7 @@ Vue 3.0还没有发布，但可以使用@vue/composition-api体验Vue 3.0的函�
 - [`useDebounceFun`](https://github.com/WARJY/Chooks/blob/master/docs/debounceFun.md) &mdash; 为【函数】添加防抖功能的装饰器函数
 - [`useThrottleFun`](https://github.com/WARJY/Chooks/blob/master/docs/throttleFun.md) &mdash; 为【函数】添加节流功能的装饰器函数
 - [`useLoadingFun`](https://github.com/WARJY/Chooks/blob/master/docs/loadingFun.md) &mdash; 为【函数】添加等待功能的装饰器函数
+- [`useTimeoutFun`](https://github.com/WARJY/Chooks/blob/master/docs/timeoutFun.md) &mdash; 为【函数】添加延迟执行的装饰器函数
 
 ### UI & Interactive
 - [`useSelect`](https://github.com/WARJY/Chooks/blob/master/docs/select.md) &mdash; 为【选项】提供单选，多选，选择变化等逻辑

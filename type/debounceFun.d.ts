@@ -1,1 +1,1 @@
-export function useDebounceFun(fun:Function, timeOut:number):Function
+export function useDebounceFun<T extends Function>(fun:T, timeOut:number):T

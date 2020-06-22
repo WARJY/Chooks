@@ -4,7 +4,7 @@
 
 #### Type
 ```ts
-function useThrottleFun(fun:Function, timeOut:number):Function
+export function useThrottleFun<T extends Function>(fun:T, timeOut:number):T
 ```
 #### Params
 - fun &mdash; 需要被装饰的函数，可以为任何函数

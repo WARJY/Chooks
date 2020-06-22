@@ -1,6 +1,7 @@
 import { useDebounceFun } from './hooks/debounceFun.js'
 import { useThrottleFun } from './hooks/throttleFun.js'
 import { useLoadingFun } from './hooks/loadingFun.js'
+import { useTimeoutFun } from './hooks/timeoutFun.js'
 import { useForm } from './hooks/form.js'
 import { useList } from './hooks/list.js'
 import { useCount } from './hooks/count.js'
@@ -17,6 +18,7 @@ export {
     useDebounceFun,
     useThrottleFun,
     useLoadingFun,
+    useTimeoutFun,
     useForm,
     useList,
     useCount,

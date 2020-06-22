@@ -1,1 +1,1 @@
-export function useThrottleFun(fun:Function, timeOut:number):Function
+export function useThrottleFun<T extends Function>(fun: T, timeOut: number): T

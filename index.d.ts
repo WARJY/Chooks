@@ -1,6 +1,7 @@
 import { useDebounceFun } from './type/debounceFun'
 import { useThrottleFun } from './type/throttleFun'
 import { useLoadingFun } from './type/loadingFun'
+import { useTimeoutFun } from './type/timeoutFun'
 import { useForm } from './type/form'
 import { useList } from './type/list'
 import { useCount } from './type/count'
@@ -17,6 +18,7 @@ export {
     useDebounceFun,
     useThrottleFun,
     useLoadingFun,
+    useTimeoutFun,
     useForm,
     useList,
     useCount,
