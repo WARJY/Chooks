@@ -6,6 +6,7 @@ import { useList } from './hooks/list.js'
 import { useCount } from './hooks/count.js'
 import { useSelect } from './hooks/select.js'
 import { usePagination } from './hooks/pagination.js'
+import { useCubicBezier } from './hooks/cubicBezier.js'
 import { useStorage } from './hooks/storage.js'
 import { useEmitter } from './hooks/emitter.js'
 import { useRouter } from './hooks/router.js'
@@ -21,6 +22,7 @@ export {
     useCount,
     useSelect,
     usePagination,
+    useCubicBezier,
     useStorage,
     useEmitter,
     useRouter,

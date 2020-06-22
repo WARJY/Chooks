@@ -5,7 +5,7 @@ export function useList(padding: number): {
     itemHeight: Ref<number>
     size: Ref<number>
     renderData: Ref<Array<any>> | []
-    onScroll(event: HTMLElementEventMap): void
+    scroll(scrollTop:number): void
     top: Ref<number>
     el: Ref<HTMLElement>
     toTop(): void

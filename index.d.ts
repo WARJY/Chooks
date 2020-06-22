@@ -6,6 +6,7 @@ import { useList } from './type/list'
 import { useCount } from './type/count'
 import { useSelect } from './type/select'
 import { usePagination } from './type/pagination'
+import { useCubicBezier } from './type/cubicBezier'
 import { useStorage } from './type/storage'
 import { useEmitter } from './type/emitter'
 import { useRouter } from './type/router'
@@ -21,6 +22,7 @@ export {
     useCount,
     useSelect,
     usePagination,
+    useCubicBezier,
     useStorage,
     useEmitter,
     useRouter,

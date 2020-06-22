@@ -10,9 +10,7 @@ export function useList(padding = 1) {
     const itemHeight = ref(0)
     const size = ref(0)
 
-    const onScroll = function (e) {
-        if (e.preventDefault) e.preventDefault()
-        let scrollTop = e.target.scrollTop
+    const scroll = function (scrollTop) {
         if (!scrollTop) return
         start = (Math.floor(scrollTop / itemHeight.value) <= data.value.length - size.value - padding) ? Math.floor(scrollTop / itemHeight.value) : data.value.length - size.value - padding
         top.value = (start - padding) * itemHeight.value
@@ -39,7 +37,7 @@ export function useList(padding = 1) {
         itemHeight,
         size,
         renderData,
-        onScroll,
+        scroll,
         top,
         el,
         toTop

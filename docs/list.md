@@ -5,26 +5,22 @@
 #### Type
 
 ```ts
-function useList(
-  padding? = 1
-): {
-  data: Ref<Array<any>> | [];
-  itemHeight: Ref<number>;
-  size: Ref<number>;
-  renderData: Ref<Array<any>> | [];
-  onScroll(event: HTMLElementEventMap): void;
-  top: Ref<number>;
-  el: Ref<HTMLElement>;
-  toTop(): void;
-};
+function useList(padding: number): {
+    data: Ref<Array<any>> | []
+    itemHeight: Ref<number>
+    size: Ref<number>
+    renderData: Ref<Array<any>> | []
+    scroll(scrollTop:number): void
+    top: Ref<number>
+    el: Ref<HTMLElement>
+    toTop(): void
+}
 ```
 
 #### Params
-
 - padding &mdash; 虚拟列表的临界数据 item 数量
 
 #### Return
-
 - data &mdash; 虚拟列表的所有数据
 - renderData &mdash; 虚拟列表渲染的数据
 - itemHeight &mdash; 虚拟列表每项的高度
@@ -37,21 +33,10 @@ function useList(
 #### Example
 
 ```js
-<template>
-    <div class="view" ref="view" :style="{height:size*itemHeight + 'px'}" @scroll="onScroll">
-        <div class="container" :style="{height:data*itemHeight + 'px'}">
-            <div class="item-box" :style="{top:top + 'px'}">
-                <div class="item" v-for="(item,index) in renderData" :key="index">{{item}}</div>
-            </div>
-        </div>
-    </div>
-</template>
-
-<script>
 import { useList } from 'chooks'
 export default {
     setup(){
-        const { data, renderData, onScroll, top, itemHeight, size, el, toTop } = useList();
+        const { data, renderData, scroll, top, itemHeight, size, el, toTop } = useList();
 
         let all = [];
         for (let i = 0; i < 10000; i++) {
@@ -60,6 +45,10 @@ export default {
         data.value = all
         itemHeight.value = 20
         size.value = 10
+
+        const onScroll = function(e){
+            scroll(e.target.scrollTop)
+        }
 
         return {
             data,
@@ -71,7 +60,17 @@ export default {
             view: el,
             toTop
         }
+    },
+    render(){
+        return (
+            <div class="view" ref="view" :style="{height:size*itemHeight + 'px'}" @scroll="onScroll">
+                <div class="container" :style="{height:data*itemHeight + 'px'}">
+                    <div class="item-box" :style="{top:top + 'px'}">
+                        <div class="item" v-for="(item,index) in renderData" :key="index">{{item}}</div>
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
-</script>
 ```

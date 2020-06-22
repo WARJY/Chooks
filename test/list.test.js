@@ -5,7 +5,7 @@ Vue.use(compositionAPI)
 import { useList } from '../hooks/list'
 
 test('test useList', async () => {
-    const { data, renderData, onScroll, top, itemHeight, size } = useList(1)
+    const { data, renderData, scroll, top, itemHeight, size } = useList(1)
 
     let all = []
     for (let i = 0; i < 100000; i++) {
@@ -22,11 +22,7 @@ test('test useList', async () => {
         expect(renderData.value[11]).toBe(11)
     })
 
-    onScroll({
-        target: {
-            scrollTop: 300
-        }
-    })
+    scroll(300)
 
     await Promise.resolve(true).then(data => {
         expect(top.value).toBe(280)

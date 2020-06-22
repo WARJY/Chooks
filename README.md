@@ -22,6 +22,7 @@ Vue 3.0还没有发布，但可以使用@vue/composition-api体验Vue 3.0的函�
 - [`useList`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【列表】添加滚动及虚拟列表功能
 - [`useCount`](https://github.com/WARJY/Chooks/blob/master/docs/list.md) &mdash; 为【计数器】提供技术，倒计时等功能
 - [`usePagination`](https://github.com/WARJY/Chooks/blob/master/docs/count.md) &mdash; 为【分页】提供页码，页数，每页大小，页码变化等逻辑
+- [`useCubicBezier`](https://github.com/WARJY/Chooks/blob/master/docs/cubicBezier.md) &mdash; 为为【贝塞尔过渡】提供计算，开始，结束等函数
 
 ### Communication
 - [`useEmitter`](https://github.com/WARJY/Chooks/blob/master/docs/emitter.md) &mdash; 提供一个的订阅-发布模式机制

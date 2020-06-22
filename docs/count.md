@@ -22,10 +22,10 @@ function useCount(): {
 
 #### Example
 ```js
-import { useCount} from 'chooks'
+import { useCount } from 'chooks'
 export default {
     setup(){
-        const { count, change, min, max, countDown } = useCount()
+        const { count, change, min, max, countDown, stop } = useCount()
 
         count.value = 10
         max.value = 2
@@ -33,11 +33,20 @@ export default {
         change(10)
         change(-1)
 
-        countDown(1000, 1).then(data=>{
-            console.log("complete")
+        omMounted(()=>{
+            countDown(1000, 1).then(data=>{
+                console.log("complete")
+            })
         })
-        
-        return {}
+
+        return {
+            count
+        }
+    },
+    render(){
+        return (
+            <div>倒计时：{{count}}</div>
+        )
     }
 }
 ```

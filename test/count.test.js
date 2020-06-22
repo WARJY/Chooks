@@ -19,13 +19,19 @@ describe("test useCount", () => {
     })
 
     test("test countDown", async () => {
-        const { count, countDown } = useCount()
+        const { count, countDown, stop } = useCount()
         count.value = 30
-        countDown(500, 1).then(data=>{
+
+        countDown(500, 1).then(data => {
             expect(count.value).toBe(0)
         })
-        new Promise(r=>setTimeout(r(),600)).then(data=>{
-            expect(count.value).toBe(29)
-        })
+
+        await new Promise(r => setTimeout(r, 500)).then()
+        expect(count.value).toBe(29)
+
+        stop.value()
+
+        await new Promise(r => setTimeout(r, 1000)).then()
+        expect(count.value).toBe(29)
     })
 })
