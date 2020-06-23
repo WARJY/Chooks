@@ -10,6 +10,7 @@ function useCount(): {
     max: Ref<number>
     change(val: number): void
     countDown(interval: number?, val: number?): Promise<true | Error>
+    stop: Ref<Function>
 }
 ```
 
@@ -19,8 +20,9 @@ function useCount(): {
 - max &mdash; 最大值，默认2^53
 - change(val) &mdash; 数值改变函数，传入正负数
 - countDown(interval,val) &mdash; 倒计时函数，返回Promise
+- stop &mdash; 倒计时停止（此函数为ref函数，执行时需要```stop.value()```）
 
-#### Example
+<!-- #### Example
 ```js
 import { useCount } from 'chooks'
 export default {
@@ -49,4 +51,4 @@ export default {
         )
     }
 }
-```
+``` -->

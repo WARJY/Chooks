@@ -11,37 +11,6 @@ require('prismjs/components/prism-tsx')
 require('prismjs/components/prism-bash')
 
 module.exports = ({ config }) => {
-    // config.module.rules.push({
-    //     test: /\.md$/,
-    //     use: [
-    //         {
-    //             loader: require.resolve('markdown-it-loader'),
-    //             options: {
-    //                 html: true,
-    //                 xhtmlOut: true,
-    //                 linkify: true,
-    //                 typographer: true,
-    //                 use: [
-    //                     prism,
-    //                     highlightLines,
-    //                     [
-    //                         linkAttributes,
-    //                         {
-    //                             pattern: /^https?:/,
-    //                             attrs: {
-    //                                 class: 'external-link',
-    //                                 target: '_blank',
-    //                             },
-    //                         },
-    //                     ],
-    //                 ],
-    //             },
-    //         },
-    //         {
-    //             loader: require.resolve('../scripts/typing-loader'),
-    //         },
-    //     ],
-    // })
 
     config.module.rules.push({
         test: /\.(ts|tsx)$/,
@@ -58,23 +27,6 @@ module.exports = ({ config }) => {
             },
         ],
     })
-
-    // config.module.rules.push({
-    //     test: /\.css$/,
-    //     use: [
-    //         {
-    //             loader: 'postcss-loader',
-    //             options: {
-    //                 ident: 'postcss',
-    //                 plugins: [
-    //                     require('postcss-import'),
-    //                     require('tailwindcss'),
-    //                     require('autoprefixer'),
-    //                 ],
-    //             },
-    //         },
-    //     ],
-    // })
 
     config.resolve.extensions.push('.ts', '.tsx')
     return config
