@@ -22,7 +22,7 @@ function useCount(): {
 - countDown(interval,val) &mdash; 倒计时函数，返回Promise
 - stop &mdash; 倒计时停止（此函数为ref函数，执行时需要```stop.value()```）
 
-<!-- #### Example
+#### Example
 ```js
 import { useCount } from 'chooks'
 export default {
@@ -44,11 +44,6 @@ export default {
         return {
             count
         }
-    },
-    render(){
-        return (
-            <div>倒计时：{{count}}</div>
-        )
     }
 }
-``` -->
+```

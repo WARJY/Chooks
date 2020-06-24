@@ -14,7 +14,7 @@ export function useCount() {
         count.value += val
     }
 
-    const stop = ref("")
+    const stop = ref(()=>{})
 
     const countDown = function (interval = 1000, val = 1) {
         return new Promise((r, j) => {

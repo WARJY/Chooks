@@ -1,15 +1,27 @@
-*{
-    font-size: 14px;
-    color: #eee;
-    line-height: 24px;
+* {
+  font-size: 14px;
+  color: #eee;
+  line-height: 24px;
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
 }
 
-input{
-    width: 100px;
-    margin: 10px 0;
+input {
+  width: 100px;
+  margin: 10px 0;
 }
 
-button{
-    color: #333;
-    font-weight: bold;
+button {
+  width: 60px;
+  color: #333;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
 }
