@@ -5,8 +5,8 @@
 #### Type
 
 ```ts
-function useList(padding: number): {
-    data: Ref<Array<any>> | []
+function useList(padding?: number): {
+    data: Ref<Array<any> | []>
     itemHeight: Ref<number>
     size: Ref<number>
     renderData: Ref<Array<any>> | []

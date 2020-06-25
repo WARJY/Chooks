@@ -1,65 +1,39 @@
-import { storiesOf, addParameters } from '@storybook/vue'
+import { storiesOf } from '@storybook/vue'
 import { defineComponent, ref } from '@vue/composition-api'
 
 import { useCount } from '../index'
 import md from '../docs/count.md'
 
-const Demo = defineComponent({
+const Count = defineComponent({
+    template: `
+        <div>
+            <div class="title">EXAMPLE - national counter</div>
+            <div class="panel">
+                <div>count: {{count}}</div>
+                <div>min: {{min}}</div>
+                <div>max: {{max}}</div>
+                <button @click="change(-1)">-1</button>&nbsp;
+                <input v-model="count"></input>&nbsp;
+                <button @click="change(1)">+1</button>&nbsp;
+            </div> <br />
+        </div>
+    `,
     setup() {
-        //普通计数
+        //national counter
         const { count, change, min, max } = useCount()
         count.value = 10
         min.value = 10
         max.value = 100
 
-        //倒计时
-        const { count: count2, countDown, stop } = useCount()
-        count2.value = 10
-
-        const complete = ref("incomplete")
-        const start = function () {
-            countDown(1000, 1).then(data => {
-                complete.value = "complete"
-            })
-        }
-        const reset = function () {
-            stop.value()
-            complete.value = "incomplete"
-            count2.value = 10
-        }
-
         return {
             count, min, max, change,
-            count2, complete, start, reset
         }
-    },
-    render(this) {
-        let { count, count2, min, max, change, start, reset, complete } = this
-        return (
-            <div>
-                <div class="title">EXAMPLE - national counter</div>
-                <div>currentCount: {count}</div>
-                <div>min: {min}</div>
-                <div>max: {max}</div>
-                <button onClick={change.bind(this, 1)}>+1</button> &nbsp;
-                <button onClick={change.bind(this, -1)}>-1</button> &nbsp;
-                <button onClick={change.bind(this, 10)}>+10</button> &nbsp;
-                <button onClick={change.bind(this, -10)}>-10</button> <br /><br />
-
-                <div class="title">EXAMPLE - countDown</div>
-                <div>countDown: {count2}</div>
-                <div>countDownComplete: {complete}</div>
-                <button onClick={start}>start</button> &nbsp;
-                <button onClick={reset}>reset</button>
-            </div>
-        )
     }
 })
 
-storiesOf('UI', module)
-    .addParameters({
+storiesOf('UI|useCount', module)
+    .add('count', () => Count, {
         readme: {
             sidebar: md
         }
     })
-    .add('useCount', () => Demo)

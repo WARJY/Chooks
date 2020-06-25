@@ -10,6 +10,6 @@ export function useStatic() {
         rate,
         isFullScreen,
         dpr: window.devicePixelRatio,
-        updateInterval: window.screen.updateInterval
+        updateInterval: window.screen.updateInterval || -1
     }
 }

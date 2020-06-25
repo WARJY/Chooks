@@ -19,7 +19,9 @@ function useCount(): {
 - min &mdash; 最小值，默认0
 - max &mdash; 最大值，默认2^53
 - change(val) &mdash; 数值改变函数，传入正负数
-- countDown(interval,val) &mdash; 倒计时函数，返回Promise
+- countDown(interval,val) &mdash; 倒计时函数，返回倒计时完成的Promise
+    - interval &mdash; 倒计时时间间隔，单位毫秒，如```countDown(500, 1)```表示每500毫秒增加1
+    - val &mdash; 倒计时数值变化，如```countDown(1000, -1)```表示每1秒减少1
 - stop &mdash; 倒计时停止（此函数为ref函数，执行时需要```stop.value()```）
 
 #### Example

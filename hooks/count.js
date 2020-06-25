@@ -1,4 +1,4 @@
-import { ref } from "@vue/composition-api"
+import { ref, watch, watchEffect } from "@vue/composition-api"
 import is from "../utils/is"
 
 export function useCount() {
@@ -7,14 +7,17 @@ export function useCount() {
     const max = ref(Math.pow(2, 53))
 
     const change = function (val) {
-        if (is(val) !== Number) return
-        let current = count.value + val
-        if (current < min.value) return count.value = min.value
-        if (current > max.value) return count.value = max.value
         count.value += val
     }
 
-    const stop = ref(()=>{})
+    watch([count, min, max], ([countVal, minVal, maxVal]) => {
+        if (+countVal > +maxVal) count.value = maxVal
+        if (+countVal < +minVal) count.value = minVal
+    }, {
+        flush: "sync"
+    })
+
+    const stop = ref(() => { })
 
     const countDown = function (interval = 1000, val = 1) {
         return new Promise((r, j) => {

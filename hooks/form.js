@@ -24,7 +24,9 @@ export function useForm() {
 
     //重置
     const reset = function (flag) { 
-        fields.value = defaultState
+        Object.keys(defaultState).forEach(field=>{
+            fields.value[field] = defaultState[field]
+        })
         if(flag === true) commit.value()
     }
 

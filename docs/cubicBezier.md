@@ -7,10 +7,7 @@
 declare function easeFun(input: number): number
 function useCubicBezier(fps: number): {
     bezier: Ref<number>
-    run(duration: number, ease: "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" |
-        "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint" | "easeInSine" | "easeOutSine" | "easeInOutSine" | "easeInExpo" | "easeOutExpo" |
-        "easeInOutExpo" | "easeInCirc" | "easeOutCirc" | "easeInOutCirc" | "easeInElastic" | "easeOutElastic" | "easeInOutElastic" | "easeInBack" | "easeOutBack" |
-        "easeInOutBack" | "easeInBounce" | "easeOutBounce" | "easeInOutBounce" | easeFun): Promise<true | Error>
+    run(duration: number, ease: "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | "easeInOutQuart" | "easeInQuint" | "easeOutQuint" | "easeInOutQuint" | "easeInSine" | "easeOutSine" | "easeInOutSine" | "easeInExpo" | "easeOutExpo" |"easeInOutExpo" | "easeInCirc" | "easeOutCirc" | "easeInOutCirc" | "easeInElastic" | "easeOutElastic" | "easeInOutElastic" | "easeInBack" | "easeOutBack" | "easeInOutBack" | "easeInBounce" | "easeOutBounce" | "easeInOutBounce" | easeFun): Promise<true | Error>
     stop: Ref<Function>
 }
 ```
@@ -20,8 +17,10 @@ function useCubicBezier(fps: number): {
 
 #### Return
 - bezier &mdash; 实时贝塞尔曲线数值（0-1）表示从开始到结束
-- run(duration,ease) &mdash; 传入持续时间和缓动函数预设（或函数），默认为easeInQuad，开始贝塞尔计算，返回过渡完成后的Promise，
-- stop() &mdash; 停止计算
+- run(duration,ease) &mdash; 开始贝塞尔计算，返回过渡完成后的Promise
+    - duration &mdash; 过渡持续时间，单位毫秒
+    - ease &mdash; 缓动函数或预设，默认为easeInQuad
+- stop() &mdash; 停止计算（此函数为ref函数，执行时需要```stop.value()```）
 
 #### Example
 ```js

@@ -33,7 +33,7 @@ import { usePagination } from 'chooks'
 export default {
     setup(){
 
-        let { page, pageSize, pageCount, pageChange, pageSizeChange, data, paginationData, callback } = usePagination(paginationCB, 10, data)
+        let { page, pageSize, pageCount, pageChange, pageSizeChange, data, paginationData, callback } = usePagination()
 
         //远程分页
         callback.value = function(pg, pgSize){

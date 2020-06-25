@@ -13,12 +13,14 @@ export function useEmitter() {
     }
 
     const off = function (eventType, handler) {
+        if(!handlers[eventType]) return
         handlers[eventType].forEach((item, index) => {
             if (item === handler) handlers[eventType].splice(index, 1)
         })
     }
 
     const emit = function (eventType, data) {
+        if(!handlers[eventType]) return
         handlers[eventType].forEach(handler => {
             handler(data)
             if (handler.once === true) off(eventType, handler)
@@ -26,6 +28,7 @@ export function useEmitter() {
     }
 
     const isSubed = function(eventType, handler){
+        if(!handlers[eventType]) return false
         return handlers[eventType].indexOf(handler) > -1
     }
 

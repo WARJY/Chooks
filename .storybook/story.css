@@ -1,4 +1,4 @@
-* {
+body {
   font-size: 14px;
   color: #eee;
   line-height: 24px;
@@ -8,20 +8,73 @@
     "Courier New", Courier, monospace;
 }
 
-input {
-  width: 100px;
-  margin: 10px 0;
+input,
+button{
+  height: 30px;
+  margin: 6px 0;
+}
+
+input{
+  width: 60px;
+  text-align: center;
+  margin: 4px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+input[type="radio"]:checked{
+  background-color: #333;
 }
 
 button {
-  width: 60px;
+  min-width: 60px;
   color: #333;
   font-weight: bold;
-  margin: 4px 0;
+}
+
+select, option{
+  width: 60px;
+  height: 30px;
+  margin: 4px 8px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .title {
   font-size: 20px;
   line-height: 30px;
   font-weight: bold;
+}
+
+.panel{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.bezier{
+  position: absolute;
+  top: 140px;
+  left: 300px;
+  transform: translate3d(0,0,0);
+}
+
+.block{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.input{
+  width: 200px;
+  text-align: left;
+  padding-left: 4px;
 }
