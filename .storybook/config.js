@@ -1,6 +1,7 @@
 import { configure, addDecorator, addParameters } from '@storybook/vue'
 import { addReadme } from 'storybook-readme/vue'
 import { create } from '@storybook/theming'
+import logo from './logo2.png'
 import './base16-gruvbox.dark.css'
 import './story.css'
 
@@ -16,9 +17,9 @@ const theme = create({
     showPanel: true,
     panelPosition: 'bottom',
 
-    brandTitle: 'VueUse',
+    brandTitle: 'Chooks',
     brandUrl: 'https://github.com/WARJY/Chooks',
-    brandImage: 'https://raw.githubusercontent.com/antfu/vueuse/master/resources/logo-storybook.png',
+    brandImage: logo,
 })
 
 addParameters({
