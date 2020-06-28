@@ -10,6 +10,8 @@ Vue 3.0还没有发布，但可以使用@vue/composition-api体验Vue 3.0的函�
 
 ## Hooks
 
+[Chooks文档](https://warjy.github.io/Chooks-doc/index.html) ( 浏览时建议切换为storybook横版 )
+
 ### Function decorator
 
 - [`useDebounceFun`](https://github.com/WARJY/Chooks/blob/master/docs/debounceFun.md) &mdash; 为【函数】添加防抖功能的装饰器函数
