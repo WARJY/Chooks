@@ -24,7 +24,7 @@ function useForm<T>(): {
     - value：```[]``` 不验证
     - value：```["empty"]``` 非空验证
     - value：```[[1,2]]``` 枚举验证，表示只能为1或2
-    - value：```["email", "phone"]``` 内置规则，分别表示电子邮箱和+86手机号码
+    - value：```["email", "phone", "tel, "url", "card"]``` 内置规则，分别表示电子邮箱，+86手机号码，座机号码，url地址和身份证号码
 - reset(true) &mdash; 将表单的值重置为传入时fields的值，传入true则自动执行一次commit
 - valid() &mdash; 表单验证，验证通过则返回true，否则返回失败原因tip的数组
 - commit() &mdash; 表单提交函数
