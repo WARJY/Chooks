@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/WARJY/Chooks/compare/v1.12.1...v1.13.0) (2020-06-28)
+
+
+### Features
+
+* 新增useCubicBezier ([ba088b8](https://github.com/WARJY/Chooks/commit/ba088b8b91069dd9b319c4b038eed66c011cf2be))
+* 新增useTimeoutFun函数 ([e554d17](https://github.com/WARJY/Chooks/commit/e554d1798389117ac33ce28b7b8cf658be0ad6a0))
+
 ### [1.12.1](https://github.com/WARJY/Chooks/compare/v1.12.0...v1.12.1) (2020-06-21)
 
 ## [1.12.0](https://github.com/WARJY/Chooks/compare/v1.9.0...v1.12.0) (2020-06-20)
