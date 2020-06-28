@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.2](https://github.com/WARJY/Chooks/compare/v1.13.1...v1.13.2) (2020-06-28)
+
+
+### Bug Fixes
+
+* 入口加入export default ([2c99833](https://github.com/WARJY/Chooks/commit/2c99833c2ba937d84f00cf60c683d7a45a037894))
+
 ### [1.13.1](https://github.com/WARJY/Chooks/compare/v1.13.0...v1.13.1) (2020-06-28)
 
 ## [1.13.0](https://github.com/WARJY/Chooks/compare/v1.12.1...v1.13.0) (2020-06-28)
