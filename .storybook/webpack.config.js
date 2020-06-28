@@ -8,8 +8,7 @@ module.exports = ({ config }) => {
                 options: {
                     presets: [
                         '@babel/env',
-                        '@babel/typescript',
-                        '@vue/app',
+                        '@babel/typescript'
                     ],
                 },
             },
