@@ -31,3 +31,21 @@ export {
     useStore,
     useStatic
 }
+
+export default {
+    useDebounceFun,
+    useThrottleFun,
+    useLoadingFun,
+    useTimeoutFun,
+    useForm,
+    useList,
+    useCount,
+    useSelect,
+    usePagination,
+    useCubicBezier,
+    useStorage,
+    useEmitter,
+    useRouter,
+    useStore,
+    useStatic
+}
