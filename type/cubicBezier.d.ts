@@ -1,6 +1,6 @@
 import { Ref } from '@vue/composition-api'
 
-declare function easeFun(input: number): number
+type easeFun = (input: number)=> number
 
 export function useCubicBezier(fps: number): {
     bezier: Ref<number>
