@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.3](https://github.com/WARJY/Chooks/compare/v1.13.2...v1.13.3) (2020-07-07)
+
+
+### Bug Fixes
+
+* 修复useCubicBezier类型声明 ([2b8490b](https://github.com/WARJY/Chooks/commit/2b8490bbb84dd277cf930b65c62ec4e1c38677f6))
+* 修复类型文件入口 ([e380967](https://github.com/WARJY/Chooks/commit/e380967360e1e11e17535215b958a4b7cf6dafa6))
+
 ### [1.13.2](https://github.com/WARJY/Chooks/compare/v1.13.1...v1.13.2) (2020-06-28)
 
 
