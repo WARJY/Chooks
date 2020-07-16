@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.4](https://github.com/WARJY/Chooks/compare/v1.13.3...v1.13.4) (2020-07-16)
+
 ### [1.13.3](https://github.com/WARJY/Chooks/compare/v1.13.2...v1.13.3) (2020-07-07)
 
 
