@@ -46,6 +46,11 @@ const Count = defineComponent({
             count.value += 1
         }
 
+        // 在vue2.0 optionCompoment语法中使用fields时需要将fields本身也转为ref对象
+        // return {
+        //     fields: ref(fields), 
+        //     reset, commit, count
+        // }
         return {
             fields, reset, commit, count
         }

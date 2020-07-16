@@ -3,6 +3,9 @@
 > 为【表单】提供初始化数据，重置，数据验证，提交，自动提交等逻辑
 
 #### Type
+
+> fields的值为一个ref对象，但当需要在模板中使用fields.a时，需要另fields本身也为一个ref对象，即return ref(fields)
+
 ```ts
 function useForm<T>(): {
     fields:Ref<T>
@@ -55,7 +58,8 @@ export default {
         let stop = setAutoCommit(["用户名"])
         stop()
 
-        return { 
+        return {
+            form: ref(fields), 
             set, reset, commit
         }
     }
